@@ -2,7 +2,7 @@
 Feature: Login functionality
 
 Background: User successfully clicked on initial login window
-When user open browser "chrome" with exe as "D:\\AutomationSupportnew\\chromedriver.exe"
+When user open browser "webdriver.chrome.driver" with exe as "D:\\AutomationSupportnew\\chromedriver.exe"
 When user enter url as "https://www.flipkart.com/"
 
 @SmokeTest

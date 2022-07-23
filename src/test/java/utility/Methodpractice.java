@@ -28,7 +28,10 @@ public class Methodpractice {
 		Thread.sleep(5000);
 		
 		driver.findElementByXPath("(//*[@type='text'])[2]").sendKeys("jadhav.dhanshree01@gmail.com",Keys.TAB);
-		String Fwindow=driver.getWindowHandle();
+		driver.findElementByXPath("//*[@type='password']").sendKeys("dhanag26");
+		driver.findElementByXPath("(//*[@type='submit'])[2]").click();
+	//	String Fwindow=driver.getWindowHandle();
+		// Fwindow.chars();
 		
 		//driver.quit();
 

@@ -9,7 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class SeleniumOperation {
+public class SeleniumOperation 
+{
 	
 	public static WebDriver driver=null;
 	
@@ -19,21 +20,10 @@ public class SeleniumOperation {
 	{
 		String bname=(String)inputparameters[0];
 		String exe=(String)inputparameters[1];
-	
-		if(bname.equalsIgnoreCase("chrome"))
-		{
-		System.setProperty("webdriver.chrome.driver",exe);
+		System.setProperty(bname,exe);
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-	}
-		else if(bname.equalsIgnoreCase("FF"))
-		{
-			System.setProperty("webdriver.gecko.driver",exe);
-			driver=new FirefoxDriver();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		}
 	}
 	catch(Exception e)
 	{
@@ -41,25 +31,26 @@ public class SeleniumOperation {
 	}
 	}
 	
+	
+	
 	public static void openApplication(Object[]inputparameters)
 	{
-		try
-		{
-		
+	try
+	{
 		String URL=(String) inputparameters[0];
 		driver.get(URL);	
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-		}
+	}
+	catch(Exception e)
+	{
+		System.out.println(e);
+	}
 	}
 		
 	public static void clickonElement(Object[]inputparameters) throws InterruptedException
 		{
-		
-		try {
+		try
+		{
 		String XPATH=(String) inputparameters[0];
 		driver.findElement(By.xpath(XPATH)).click();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -68,7 +59,8 @@ public class SeleniumOperation {
 		{
 			System.out.println(e);
 		}
-	}
+		}
+
 		
 	public static void mouseOver(Object[]inputparameters)
 	{
@@ -93,12 +85,12 @@ public class SeleniumOperation {
 		String XPATH=(String) inputparameters[0];
 		String value1=(String) inputparameters[1];
 		driver.findElement(By.xpath(XPATH)).sendKeys(value1);
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);		
+	}
+		catch(Exception e)
+		{
+			System.out.println(e);
 		}
-		catch(Exception e) {
-			
-		}
-		
 	}
 		
 		public static void validationByGetText(Object[] inputparameters)
@@ -119,19 +111,16 @@ public class SeleniumOperation {
 			
 			System.out.println("Test Case Fail");
 		}
-		}catch(Exception e)
-			{
-			System.out.println(e);
 			}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+
 }
 }
 
-
-/*
-
-		
-		
-	
+/*	
 public static void main(String[]args) throws InterruptedException
 {
 
@@ -191,7 +180,7 @@ public static void main(String[]args) throws InterruptedException
 	SeleniumOperation.sendkeys(input8);
 }
 }
-
+*/
 	
 	
 			
@@ -202,7 +191,7 @@ public static void main(String[]args) throws InterruptedException
 		//SeleniumOperation.clickonElement("//*[text()='My Profile']");
 			//SeleniumOperation.sendkeys("//*[@type='text'])[2]", "jadhav.dhanshree01@gmail.com");
 			
-			*/
+			
 			
 		
 	

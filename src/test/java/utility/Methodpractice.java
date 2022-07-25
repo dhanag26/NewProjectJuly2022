@@ -1,12 +1,15 @@
 package utility;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Methodpractice {
 	public static void main(String[]args) throws InterruptedException {
@@ -24,13 +27,33 @@ public class Methodpractice {
 		act.moveToElement(abc).build().perform();
 		Thread.sleep(5000);
 		//clickonlogin
-		driver.findElementByXPath("//*[text()='My Profile']").click();
 		Thread.sleep(5000);
+		driver.findElementByXPath("//*[text()='My Profile']").click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		driver.findElementByXPath("(//*[@type='text'])[2]").sendKeys("jadhav.dhanshree01@gmail.com",Keys.TAB);
+		WebDriverWait wait=new  WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@type='password']")));
+		
 		driver.findElementByXPath("//*[@type='password']").sendKeys("dhanag26");
 		driver.findElementByXPath("(//*[@type='submit'])[2]").click();
-	//	String Fwindow=driver.getWindowHandle();
+
+		driver.findElement(By.xpath("(//*[@class='_1arVWX'])[6]")).click();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//	String Fwindow=driver.getWindowHandle();
+	
+		
+		
 		// Fwindow.chars();
 		
 		//driver.quit();

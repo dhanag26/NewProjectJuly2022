@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
                 	tags="@SmokeTest",
                 	monochrome=true,
                 	plugin="pretty",
-                	
+                    dryRun=true,
                 	glue="cucumbermap"
                 	
                 		
